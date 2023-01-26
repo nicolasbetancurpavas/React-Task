@@ -1,10 +1,12 @@
 import React from 'react'
 
-export function BotonAdd() {
-    const onClikButton = (msg) => alert(msg)
+export function BotonAdd({ clase, openModal, setOpenModal }) {
+    const onClikButton = () => {
+        openModal ? setOpenModal(false) : setOpenModal(true)
+    }
     return (
-        <button className='boton-add'
-            onClick={() => onClikButton("Aqui va el modal")}
+        <button className={`${clase} ${openModal && 'boton-add-new'}`}
+            onClick={onClikButton}
         >
             +
         </button>

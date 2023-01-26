@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TodoCounter } from '../Counter/TodoCounter';
 import { TodoSearch } from "../Search/TodoSearch";
 import { TodoList } from "../Todos/TodoList";
@@ -11,56 +11,87 @@ import { TextInfo } from "../Info/TextInfo";
 import { TextAdd } from "../AddTodo/TextAdd";
 import { BotonAdd } from "../AddTodo/BotonAdd"
 import { SearchedText } from '../SearchText/SearchText'
+import { TodoContext } from "../TodoContext";
+import { Modal } from "../Modal";
 
-function AppUI({
-    totalTodos,
-    completedTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
-}) {
+
+function AppUI() {
+
+    const {
+        error,
+        loading,
+        searchedTodos,
+        completeTodo,
+        deleteTodo,
+        openModal,
+        setOpenModal,
+    }
+        = useContext(TodoContext)
 
     return (
-        <React.Fragment>
-            <Divcomp>
-                <Logo />
-                <TextInfo />
-                <DivcompAdd>
-                    <TextAdd />
-                    <BotonAdd />
-                </DivcompAdd>
-            </Divcomp>
-            <Width>
-                <TodoCounter
-                    Name="ToDo"
-                    total={totalTodos}
-                    completed={completedTodos}
-                />
-
-                <TodoSearch
-                    searchValue={searchValue}
-                    setSearchValue={setSearchValue}
-                />
-
-                <SearchedText
-                    task={searchValue}
-                />
-
-                <TodoList >
-                    {searchedTodos.map(todo => (
-                        <TodoItem
-                            key={todo.text}
-                            texto={todo.text}
-                            completed={todo.completed}
-                            onComplete={() => completeTodo(todo.text)}
-                            onDelete={() => deleteTodo(todo.text)}
+        <>
+            <div className="container-todo">
+                <Divcomp>
+                    <DivcompAdd clase='item-add'>
+                        <TextAdd />
+                        <BotonAdd clase={'boton-add'}
+                            setOpenModal={setOpenModal}
+                            openModal={openModal}
                         />
-                    ))}
-                </TodoList >
-            </Width>
-        </React.Fragment >
+                    </DivcompAdd>
+                    <Logo />
+                    <TextInfo />
+                </Divcomp>
+
+                <Width>
+
+                    <TodoCounter />
+                    <TodoSearch />
+                    <SearchedText />
+
+                    <TodoList >
+
+                        {!error && <p className="text-loading">OH OHH CORRE NO SE QUE PASA</p>}
+
+                        {loading &&
+                            <div className="container-loading">
+                                <p className="text-loading">Estamos cargando datos ... </p>
+                                <div className="spinner"></div>
+                            </div>}
+
+                        {(!loading && !searchedTodos.length) && <p className="text-loading">Crea tu primer ToDo</p>}
+
+                        {searchedTodos.map(todo => (
+                            <TodoItem
+                                key={todo.text}
+                                texto={todo.text}
+                                completed={todo.completed}
+                                onComplete={() => completeTodo(todo.text)}
+                                onDelete={() => deleteTodo(todo.text)}
+                            />
+                        ))}
+
+                    </TodoList >
+                    {openModal && (
+                        <Modal>
+                            <p style={{ color: 'white' }}>{searchedTodos.length ? searchedTodos[0].text : 'cargando datos ..'}</p>
+                        </Modal>
+                    )}
+
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+
+                </Width>
+
+                <BotonAdd
+                    clase={'boton-add mobile-btn'}
+                    setOpenModal={setOpenModal}
+                    openModal={openModal}
+                />
+
+
+            </div>
+
+        </ >
     )
 }
 

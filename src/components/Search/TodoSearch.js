@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '../TodoContext';
 
-function TodoSearch({ searchValue, setSearchValue }) {
+function TodoSearch() {
 
+    const { searchValue, setSearchValue } = useContext(TodoContext)
 
     const onSearchValueChange = (event) => {
         setSearchValue(event.target.value) // obtener el valor de un input cuando suceda un evento 
@@ -11,7 +13,7 @@ function TodoSearch({ searchValue, setSearchValue }) {
 
     return (
         <input className='buscador'
-            placeholder=''
+            placeholder='Buscar ToDo'
             value={searchValue} // convecion para conectar el component (bugs)
             onChange={onSearchValueChange} // 
         />

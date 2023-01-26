@@ -1,8 +1,11 @@
 import React from 'react'
-import Img from "../img/logotipo.png"
+import Img from "../../assets/Logo.png"
 
-export function Logo(props) {
+export function Logo() {
     return (
-        <img className='img-logo' src={Img} />
+        <div className='container-logo'>
+            <img className='img-logo' src={Img} alt='logo' />
+            <h1 className='title-logo'>Astro ToDo</h1>
+        </div>
     )
 }
