@@ -10,7 +10,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
 }
 
@@ -35,6 +34,10 @@ Miscelánea (cursor, overflow, z-index)
 }
 
 .mobile-btn {
+  display: none;
+}
+
+.container-add-todo-mobile .text-add {
   display: none;
 }
 
@@ -83,40 +86,52 @@ Miscelánea (cursor, overflow, z-index)
 .text-info {
   margin-top: 8px;
   color: var(--secondary);
-  font-size: 22px;
+  font-size: 20px;
   display: flex;
+  width: 380px;
 }
 
 .item-add {
   display: flex;
   align-items: center;
-  margin-top: 35px;
+  margin-top: 30px;
+  border: 5px solid var(--secondary);
+  -webkit-box-shadow: 0px 8px 8px -7px var(--detail), 2px 0px 9px 0px var(--detail);
+  box-shadow: 0px 8px 8px -7px var(--detail), 2px 0px 9px 0px var(--detail);
+  border-radius: 30px;
+  padding: 5px;
 }
 
 .text-add {
-  color: var(--secondary);
-  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  color: var(--light);
+  margin-right: 10px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .boton-add {
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  font-size: 25px;
+  font-size: 38px;
   font-weight: bold;
-  color: var(--light);
-  background-color: var(--primary);
-  border: 3px var(--light) solid;
+  color: white;
+  background-color: rgb(71, 206, 71);
+  border: 2px solid white;
+  -webkit-box-shadow: 0px 8px 8px -7px var(--detail), 2px 0px 9px 0px var(--detail);
+  box-shadow: 0px 8px 8px -7px var(--detail), 2px 0px 9px 0px var(--detail);
   z-index: 1;
 }
 
 .boton-add:hover {
   cursor: pointer;
-  background-color: var(--primary);
-  transform: rotate(85deg);
+  background-color: rgb(71, 206, 71);
+  color: white;
+  transform: rotate(90deg);
   transition: all 0.5s ease;
+  border: 2px solid white;
 }
 
 .boton-add:active {
@@ -129,14 +144,16 @@ Miscelánea (cursor, overflow, z-index)
 }
 
 .boton-add-new {
-  width: 48px;
-  height: 48px;
+  width: 55px;
+  height: 55px;
   cursor: pointer;
   background: rgb(227, 7, 7);
   border: 3px white solid;
   color: white;
   transform: rotate(45deg);
   transition: all 0.3s ease;
+  -webkit-box-shadow: 0px 8px 8px -7px rgb(227, 7, 7), 2px 0px 9px 0px rgb(227, 7, 7);
+  box-shadow: 0px 8px 8px -7px rgb(227, 7, 7), 2px 0px 9px 0px rgb(227, 7, 7);
 }
 
 .boton-add-new:hover {
@@ -152,6 +169,7 @@ Miscelánea (cursor, overflow, z-index)
   flex-direction: column;
   position: relative;
   align-items: center;
+  justify-content: center;
   height: auto;
   padding: 10px;
   border-radius: 15px;
@@ -161,7 +179,7 @@ Miscelánea (cursor, overflow, z-index)
 }
 
 .Todo-counter {
-  margin: 20px;
+  margin: 25px;
   font-size: 22px;
   font-weight: bold;
   color: var(--light);
@@ -191,25 +209,33 @@ Miscelánea (cursor, overflow, z-index)
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
   width: 100%;
-  height: 340px;
+  height: 300px;
   overflow: scroll;
-  margin-bottom: 20px;
+
 }
 
 .container::-webkit-scrollbar {
   display: none;
 }
 
+.text-add ion-icon {
+  color: var(--light);
+  animation: arrowLeft 2s infinite;
+}
+
 ion-icon {
   color: var(--light);
   animation: arrow 1.4s infinite;
-
 }
 
 @keyframes arrow {
   0% {
-    transform: translate(0px, 0px);
+    transform: translate(0px, 2px);
   }
 
   50% {
@@ -217,11 +243,24 @@ ion-icon {
   }
 
   100% {
+    transform: translate(0px, 2px);
+  }
+}
+
+@keyframes arrowLeft {
+
+  40% {
+    transform: translate(6px, 0px);
+  }
+
+  100% {
     transform: translate(0px, 0px);
   }
 }
 
+
 .item-task {
+  width: 400px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -284,6 +323,7 @@ ion-icon {
 }
 
 .text-search {
+  text-align: centera;
   margin-bottom: 20px;
   color: var(--secondary);
   font-weight: bold;
@@ -296,7 +336,6 @@ ion-icon {
 }
 
 .text-loading {
-  margin-top: 50px;
   color: var(--light);
   text-align: center;
 }
@@ -331,7 +370,38 @@ ion-icon {
 }
 
 
+@media (max-height:767px) {
+  .item {
+    display: none;
+  }
+
+}
+
+
 @media (max-width:830px) {
+
+  .item {
+    display: none;
+  }
+
+  .container-add-todo-mobile .text-add {
+    display: flex;
+    font-size: 17px;
+    padding: 10px;
+
+  }
+
+  .container-add-todo-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    border: 5px solid var(--secondary);
+    -webkit-box-shadow: 0px 8px 8px -7px var(--detail), 2px 0px 9px 0px var(--detail);
+    box-shadow: 0px 8px 8px -7px var(--detail), 2px 0px 9px 0px var(--detail);
+    border-radius: 30px;
+    padding: 5px;
+  }
 
   .mobile-btn {
     display: block;
@@ -342,7 +412,7 @@ ion-icon {
   }
 
   body {
-    display: block;
+    display: flex;
   }
 
   .item-add {
@@ -372,21 +442,44 @@ ion-icon {
     width: 150px;
   }
 
-  .boton-add {
-    position: relative;
-    bottom: 5px;
-  }
-
-  .boton-add-new {
-    position: absolute;
-    top: 20%;
-    transition: all 0.5s ease;
-  }
-
   .boton-add-new:hover {
     background: rgb(227, 7, 7);
     transform: rotate(-50deg);
     transition: all 0.4s ease;
   }
 
+}
+
+
+@media (max-width:520px) {
+
+  .item-task {
+    width: 280px;
+  }
+
+  .buscador {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .text-add ion-icon {
+    display: none;
+  }
+
+  .container-add-todo-mobile .text-add {
+    font-size: 14px;
+  }
+
+  .width {
+    width: auto;
+    padding: 0px;
+  }
+
+  .mobile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+  }
 }

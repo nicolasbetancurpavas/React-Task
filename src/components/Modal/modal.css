@@ -10,3 +10,105 @@
     justify-content: center;
     align-items: center;
 }
+
+.form-addTodo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--dark);
+    padding: 60px;
+    border: 10px solid var(--secondary);
+    border-radius: 10px;
+}
+
+.input-new-todo {
+    display: flex;
+    text-align: center;
+    border: 5px solid var(--light);
+    background-color: var(--dark);
+    color: var(--light);
+    height: 100px;
+    border-radius: 10px;
+}
+
+.input-new-todo::placeholder {
+    color: var(--light);
+}
+
+.container-btn-new-todo {
+    margin-top: 15px;
+    display: flex;
+}
+
+.btn-add-todo {
+    width: 150px;
+    font-size: 16px;
+    background-color: var(--dark);
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--light);
+    border: 2px solid var(--light);
+    margin-right: 10px;
+}
+
+.btn-add-todo:hover {
+    cursor: pointer;
+    border: 2px solid red;
+    color: red;
+    transition: all 0.4s ease;
+}
+
+.btn-add-todo-save {
+    width: 150px;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--light);
+    border: 2px solid var(--light);
+}
+
+.btn-add-todo-save:hover {
+    cursor: pointer;
+    background-color: var(--secondary);
+    transition: all 0.4s ease;
+}
+
+@media (max-width:480px) {
+
+    .container-btn-new-todo {
+        margin-top: 20px;
+        display: flex;
+    }
+
+    .form-addTodo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--dark);
+        padding: 20px;
+        border: 10px solid var(--secondary);
+        border-radius: 10px;
+    }
+
+    .btn-add-todo {
+        width: 100px;
+        font-size: 14px;
+        background-color: var(--dark);
+        padding: 15px;
+        border-radius: 5px;
+        color: var(--light);
+        border: 2px solid var(--light);
+        margin-right: 10px;
+    }
+
+    .btn-add-todo-save {
+        width: 100px;
+        font-size: 14px;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: var(--primary);
+        color: var(--light);
+        border: 2px solid var(--light);
+    }
+}

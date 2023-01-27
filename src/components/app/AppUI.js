@@ -13,6 +13,9 @@ import { BotonAdd } from "../AddTodo/BotonAdd"
 import { SearchedText } from '../SearchText/SearchText'
 import { TodoContext } from "../TodoContext";
 import { Modal } from "../Modal";
+import { TodoForm } from "../TodoForm/TodoForm";
+
+
 
 
 function AppUI() {
@@ -32,6 +35,22 @@ function AppUI() {
         <>
             <div className="container-todo">
                 <Divcomp>
+
+                    <Logo />
+                    <TextInfo />
+
+                </Divcomp>
+
+                <DivcompAdd clase='container-add-todo-mobile'>
+                    <TextAdd />
+                    <BotonAdd
+                        clase={'boton-add mobile-btn'}
+                        setOpenModal={setOpenModal}
+                        openModal={openModal}
+                    />
+                </DivcompAdd>
+
+                <Width>
                     <DivcompAdd clase='item-add'>
                         <TextAdd />
                         <BotonAdd clase={'boton-add'}
@@ -39,15 +58,14 @@ function AppUI() {
                             openModal={openModal}
                         />
                     </DivcompAdd>
-                    <Logo />
-                    <TextInfo />
-                </Divcomp>
 
-                <Width>
 
                     <TodoCounter />
                     <TodoSearch />
                     <SearchedText />
+
+                    <ion-icon name="chevron-up-outline"></ion-icon>
+
 
                     <TodoList >
 
@@ -74,20 +92,13 @@ function AppUI() {
                     </TodoList >
                     {openModal && (
                         <Modal>
-                            <p style={{ color: 'white' }}>{searchedTodos.length ? searchedTodos[0].text : 'cargando datos ..'}</p>
+                            <TodoForm />
                         </Modal>
                     )}
 
                     <ion-icon name="chevron-down-outline"></ion-icon>
 
                 </Width>
-
-                <BotonAdd
-                    clase={'boton-add mobile-btn'}
-                    setOpenModal={setOpenModal}
-                    openModal={openModal}
-                />
-
 
             </div>
 
