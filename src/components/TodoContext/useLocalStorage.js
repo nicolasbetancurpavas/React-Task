@@ -28,10 +28,9 @@ function useLocalStorage(itemName, initialValue) {
                 setError(error)
             }
 
-            return { initialValue, itemName }
-
         }, 2000)
     }, [])
+
 
 
     //logica para guardar 
