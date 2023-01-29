@@ -4,4 +4,4 @@
 ✔ el uso del estado y de los efectos de react para simular consumo de api de los datos<br>
 ✔ borrar,agregar,marcar como completado , todo en almacenamiento permanente sin BD <br>
 
-### [Probar APP todo machine ](### [Ver Tienda](https://todomachine-app.netlify.app/))
+### [PROBAR APP TODOMACHINE](https://todomachine-app.netlify.app/))
