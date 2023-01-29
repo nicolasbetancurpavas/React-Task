@@ -8,9 +8,10 @@ function useLocalStorage(itemName, initialValue) {
 
     useEffect(() => {
         setTimeout(() => {
+
             try {
                 const localStorageItem = localStorage.getItem(itemName) // null si esta vacio
-                let parseItem;
+                let parseItem
 
                 if (!localStorageItem) { // si no existen datos en localStorage
                     localStorage.setItem(itemName, initialValue)
@@ -26,8 +27,12 @@ function useLocalStorage(itemName, initialValue) {
             catch (error) {
                 setError(error)
             }
+
+            return { initialValue, itemName }
+
         }, 2000)
     }, [])
+
 
     //logica para guardar 
     const saveItem = (newItem) => {
