@@ -1,0 +1,25 @@
+.container-filters {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.container-filters a {
+    color: var(--color-dark-varian);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.container-filters a:nth-child(1) ion-icon {
+    color: var(--color-danger);
+}
+
+.container-filters a:nth-child(2) ion-icon {
+    color: var(--color-succes);
+}
+
+.container-filters a:nth-child(3) ion-icon {
+    color: var(--color-warning);
+}

@@ -12,7 +12,7 @@
   --color-warning: #ffbb55;
   --color-warning2: rgb(236, 223, 204);
   --color-white: #fff;
-  --color-diasable: #adadadd1;
+  --color-diasable: #a09d9dec;
   --color-info-light: #cbe1df;
   --color-dark: #414040f4;
   --color-light: rgba(132, 187, 200, 0.21);
@@ -29,7 +29,7 @@
   --padding-1: 1.2rem;
 
   --box-shadow: 0 1rem 2rem var(--color-light);
-  --box-shadow2: 0 0.1rem 0.5rem var(--color-diasable);
+  --box-shadow2: 0 1rem 2rem rgb(229, 229, 229);
 }
 
 /*==========dark theme variables*/
@@ -112,4 +112,17 @@ small {
   display: grid;
   gap: 1.8rem;
   grid-template-columns: 22rem auto 30rem;
+}
+
+.icon-reload ion-icon {
+  color: var(--color-secondary);
+  font-weight: bold;
+  font-size: 2rem;
+  transition: all 0.4s ease;
+  margin-right: 3rem;
+}
+
+.icon-reload ion-icon:hover {
+  cursor: pointer;
+  color: var(--color-primary);
 }

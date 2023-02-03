@@ -2,7 +2,7 @@ import React from 'react'
 import { AsideItem } from './AsideItem'
 import { AsideBottom } from './AsideBottom'
 
-export const AsideBody = () => {
+export const AsideBody = ({ totalTodos }) => {
     return (
         <div className='container-sidebar'>
             <div className='sidebar_top'>
@@ -24,7 +24,7 @@ export const AsideBody = () => {
                 <a className='aside_item task' href='##'>
                     <ion-icon name="pencil-sharp"></ion-icon>
                     <h3 className='sidebar_item'>My task</h3>
-                    <span>10</span>
+                    <span>{totalTodos}</span>
                 </a>
                 <AsideItem
                     icon={'calendar-number-sharp'}

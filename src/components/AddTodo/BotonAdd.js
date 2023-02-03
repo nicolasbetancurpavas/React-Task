@@ -6,6 +6,6 @@ export function BotonAdd({ clase, openModal, setOpenModal }) {
     return (
         <button className={`${clase} ${openModal && 'boton-add-new'}`}
             onClick={onClikButton}
-        >Agregar tarea +</button>
+        >Agregar tarea <ion-icon name="add-circle-outline"></ion-icon></button>
     )
 }

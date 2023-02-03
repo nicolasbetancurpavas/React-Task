@@ -1,12 +1,11 @@
 .container-count-todo {
-    margin-top: 1.7rem;
+    margin-top: 1.2rem;
+    max-width: 46rem;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1.5rem;
-    width: 100%;
     background-color: var(--color-white);
     border-radius: 1rem;
     box-shadow: var(--box-shadow);
@@ -18,12 +17,13 @@
 }
 
 .count {
+    margin-top: 1rem;
     width: 10rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 5rem;
+    height: 5.5rem;
 }
 
 .container-count-todo .count h1 {
@@ -35,6 +35,7 @@
     width: 100%;
     margin-left: 20px;
     text-align: end;
+    font-size: 40px;
 }
 
 .container-count-todo .count h1::before {
@@ -42,7 +43,7 @@
     left: 15%;
     content: '';
     width: 0.2rem;
-    background-color: var(--color-violet);
+    background-color: var(--color-dark);
     height: 60%;
 }
 
@@ -60,23 +61,12 @@
 
 .container-count-todo .count:nth-child(3) {
     padding: 0.3rem;
-    background-color: var(--color-danger2);
+    background-color: var(--color-warning2);
     border-radius: 0.5rem;
 }
 
 .container-count-todo .count:nth-child(4) {
     padding: 0.3rem;
-    background-color: var(--color-warning2);
+    background-color: var(--color-danger2);
     border-radius: 0.5rem;
-}
-
-.container-count-todo .count:nth-child(3) h1,
-.container-count-todo .count:nth-child(4) h1 {
-    font-size: 14px;
-    color: var(--color-diasable);
-}
-
-.container-count-todo .count:nth-child(3) h1::before,
-.container-count-todo .count:nth-child(4) h1::before {
-    position: static;
 }

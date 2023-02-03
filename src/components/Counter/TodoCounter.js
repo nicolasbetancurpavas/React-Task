@@ -8,20 +8,20 @@ function TodoCounter() {
     return (
         <div className="container-count-todo">
             <TodoCounterItem
-                title={'TOTAL-TASK'}
+                title={'Total task'}
                 value={totalTodos}
             />
             <TodoCounterItem
-                title={'COMPLETE-TASK'}
+                title={'Completed task'}
                 value={completedTodos}
             />
             <TodoCounterItem
-                title={'IN PROGRESS'}
-                value={'diasable'}
+                title={'Favorites'}
+                value={0}
             />
             <TodoCounterItem
-                title={'WAITING'}
-                value={'diasable'}
+                title={'In progress'}
+                value={0}
             />
         </div>
     )

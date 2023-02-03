@@ -15,6 +15,7 @@ import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm/TodoForm";
 import { Profile } from "../Profile/Profile";
 import { ProgressBar } from "../ProgressBar/ProgressBar";
+import { NavFilter } from "../NavFilter.js/NavFilter";
 
 function AppUI() {
 
@@ -35,11 +36,16 @@ function AppUI() {
                 <Aside />
                 <Main>
                     <TodoSearch />
+                    <TodoCounter />
                     <DivcompAdd clase='container-filter-todo'>
                         <BotonAdd clase={'btn-new-todo'}
                             setOpenModal={setOpenModal}
                             openModal={openModal}
                         />
+                        <a href="./" className="icon-reload">
+                            <ion-icon name="reload-sharp"></ion-icon>
+                        </a>
+                        <NavFilter />
                     </DivcompAdd>
                     <TodoList >
                         {!error && <p className="text-loading">OH OHH CORRE NO SE QUE PASA</p>}
@@ -73,7 +79,6 @@ function AppUI() {
                 <Right>
                     <Profile />
                     <ProgressBar />
-                    <TodoCounter />
                     {openModal && (
                         <Modal>
                             <TodoForm />

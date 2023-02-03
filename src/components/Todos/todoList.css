@@ -1,0 +1,45 @@
+.container {
+    position: relative;
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    padding: 2rem;
+    height: 44rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: all 0.4s ease;
+    overflow-y: hidden;
+    overflow: scroll;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.container:hover {
+    box-shadow: none;
+}
+
+.container ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    list-style: none;
+}
+
+.item-task {
+    width: 18.5rem;
+    height: 12rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: var(--box-shadow2);
+    transition: all 0.4s ease;
+}
+
+.item-task:hover {
+    box-shadow: none;
+}
