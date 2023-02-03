@@ -1,0 +1,80 @@
+.container-progress {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1.3rem;
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.container-progress:hover {
+    box-shadow: none;
+}
+
+.container-progress .percent {
+    top: 19.8%;
+    left: 31.6%;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+}
+
+.container-progress .percent svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.container-progress .percent svg circle {
+    width: 150px;
+    height: 150px;
+    fill: none;
+    stroke-width: 10;
+    stroke: #000;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+
+.container-progress .percent svg circle:nth-child(1) {
+    stroke-dashoffset: 0;
+    stroke: var(--color-white);
+}
+
+.container-progress .percent svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - 370);
+    stroke: var(--color-violet);
+}
+
+.container-progress .number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-progress .border-progress {
+    border: 50px solid var(--color-violet2);
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+}
+
+.container-progress h2 {
+    color: var(--color-dark);
+}
+
+.container-progress h2 span {
+    font-size: 1rem;
+    color: var(--color-diasable);
+}

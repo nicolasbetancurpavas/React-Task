@@ -1,8 +1,8 @@
 import React from 'react'
 
-export function Divcomp(props) {
+export function Main(props) {
     return (
-        <div className='item'>
+        <div className='Main'>
             {props.children}
         </div>
     )

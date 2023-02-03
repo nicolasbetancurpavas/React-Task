@@ -1,0 +1,142 @@
+ion-icon {
+    font-size: 20px;
+}
+
+.container-aside {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-white);
+    height: 100vh;
+    padding: 1.7rem;
+}
+
+.container-sidebar {
+    width: 100%;
+}
+
+.container-sidebar .task {
+    padding: 0px;
+    color: var(--color-primary);
+    background-color: var(--color-background);
+}
+
+.container-sidebar .task:hover {
+    margin-left: 0;
+}
+
+.container-sidebar .task::before {
+    content: '';
+    width: 0.4rem;
+    background-color: var(--color-primary);
+    height: 100%;
+}
+
+.sidebar_top {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sidebar_body h4 {
+    margin-bottom: 1.4rem;
+    color: var(--color-dark-varian);
+}
+
+.aside_item {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    color: var(--color-diasable);
+    padding: 0.3rem;
+    transition: all 0.3s ease;
+    border-radius: 0.3rem;
+}
+
+.aside_item:hover {
+    margin-left: 7px;
+    background-color: var(--color-background);
+}
+
+.aside_item span {
+    position: absolute;
+    text-align: center;
+    color: var(--color-white);
+    font-weight: bold;
+    width: 2.2rem;
+    padding: 0.1rem;
+    right: 20px;
+    border-radius: 0.2rem;
+    background-color: var(--color-primary);
+}
+
+.sidebar_bottom {
+    margin-top: 2rem;
+    color: var(--color-diasable);
+}
+
+.sidebar_bottom h4 {
+    color: var(--color-dark-varian);
+    margin-bottom: 1.4rem;
+}
+
+.sidebar_bottom a {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+    position: relative;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    color: var(--color-diasable);
+}
+
+.sidebar_bottom a:hover {
+    margin-left: 7px;
+    background-color: var(--color-background);
+}
+
+.sidebar_bottom a ion-icon {
+    position: absolute;
+    right: 30px;
+    color: var(--color-dark);
+}
+
+.sidebar_bottom .item-layout {
+    margin-top: 60px;
+}
+
+.sidebar_bottom .item-layout ion-icon {
+    position: static;
+}
+
+.sidebar_bottom .item-layout:hover {
+    position: static;
+    color: rgb(240, 96, 96);
+}
+
+.sidebar_bottom_img {
+    width: 30px;
+    height: 30px;
+}
+
+.container-aside .span-new {
+    background-color: var(--color-warning);
+}
+
+.container-aside .span-message {
+    background-color: var(--color-danger);
+}
+
+@media (max-height:828px) {
+    .container-aside {
+        height: 100%;
+    }
+}

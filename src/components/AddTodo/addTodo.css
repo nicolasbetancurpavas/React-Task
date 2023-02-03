@@ -1,0 +1,18 @@
+.container-filter-todo {
+    margin-top: 3rem;
+}
+
+.btn-new-todo {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    box-shadow: var(--box-shadow2);
+    transition: all 0.5s ease;
+}
+
+.btn-new-todo:hover {
+    cursor: pointer;
+    box-shadow: none;
+}

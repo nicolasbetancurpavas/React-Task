@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { TodoContext } from '../TodoContext';
+import { SearchedText } from './SearchText';
+import './search.css'
 
 function TodoSearch() {
 
@@ -12,11 +14,17 @@ function TodoSearch() {
     };
 
     return (
-        <input className='buscador'
-            placeholder='Buscar ToDo'
-            value={searchValue} // convecion para conectar el component (bugs)
-            onChange={onSearchValueChange} // 
-        />
+        <div className='container-search'>
+            <div className='input-container'>
+                <input className='input-Search'
+                    placeholder='Search your tasks'
+                    value={searchValue} // convecion para conectar el component (bugs)
+                    onChange={onSearchValueChange} // 
+                />
+                <ion-icon name="search-sharp"></ion-icon>
+            </div>
+            <SearchedText />
+        </div>
     )
 }
 

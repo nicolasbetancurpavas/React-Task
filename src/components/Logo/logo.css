@@ -1,0 +1,16 @@
+.container_aside_top {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1.5rem auto;
+}
+
+.aside_top_img {
+    width: 55px;
+    height: 55px;
+}
+
+.aside_top_title span {
+    color: var(--color-primary);
+}
