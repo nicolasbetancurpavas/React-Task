@@ -15,7 +15,7 @@ export const ProgressBar = () => {
                     </div>
                 </div>
             </div>
-            <h2>progress <span>promptly available</span></h2>
+            <h2>Progress <span> promptly available</span></h2>
         </div>
     )
 }

@@ -2,22 +2,44 @@ import React from 'react'
 import img from '../../assets/img/team/user.png'
 
 function TodoItem(props) {
-    const { texto } = props
+    const {
+        texto,
+        title,
+        completed,
+        onComplete,
+        onDelete
+    } = props
 
     return (
-        <li className={`item-task ${props.completed && 'container-confirm'}`}>
-            <div className='Delete-completed'>
-                <i className={`fa-solid fa-circle-notch confirm ${props.completed && 'confirm-completed fa-solid fa-circle color'}`}
-                    onClick={props.onComplete} >
-                </i>
+        <li className={`item-task ${completed && 'container-confirm'}`}>
 
-                <i className="bi bi-trash"
-                    onClick={props.onDelete}>
-                </i>
+            <div className='body-card'>
+                <div className='Delete-completed'>
+                    <i className={`fa-solid fa-circle-notch ${props.completed && 'confirm-completed fa-solid fa-circle color'}`}
+                        onClick={onComplete} >
+                    </i>
+
+                    <i className="bi bi-trash"
+                        onClick={onDelete}>
+                    </i>
+                </div>
+
+                <h2 className={`title-todo ${completed && 'p-completed'}`}>{title}</h2>
+
+                <p className={`task ${completed && 'p-completed'}`}>
+                    {texto}
+                </p>
+
+                <div className='container-img-task'>
+                    <img src={img} alt='img-profile-task' />
+                    <p className={`${completed && 'p-completed'}`}>recent task</p>
+                </div>
             </div>
-            <p className={`task ${props.completed && 'p-completed'}`}>
-                {texto}</p>
 
+            <div className='icons-task'>
+                <ion-icon name="star-sharp"></ion-icon>
+                <ion-icon name="ellipsis-horizontal-sharp"></ion-icon>
+            </div>
 
         </li>
     )

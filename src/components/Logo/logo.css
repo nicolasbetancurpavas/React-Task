@@ -4,11 +4,13 @@
     gap: 1rem;
     align-items: center;
     margin: 1.5rem auto;
+    margin-top: 0.4rem;
 }
 
 .aside_top_img {
     width: 55px;
     height: 55px;
+    border-radius: 0.3rem;
 }
 
 .aside_top_title span {

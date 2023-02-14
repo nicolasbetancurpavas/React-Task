@@ -1,5 +1,5 @@
 .Main {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .right {
@@ -8,4 +8,41 @@
     align-items: center;
     margin-top: 2rem;
     margin-right: 1rem;
+}
+
+@media (max-width:849px) {
+    .Main {
+        max-width: 40rem;
+        margin: auto;
+    }
+
+    .right {
+        width: 40rem;
+        margin: auto;
+    }
+}
+
+@media (max-width:530px) {
+    .Main {
+        max-width: 26rem;
+        margin: auto;
+    }
+
+    .right {
+        width: 26rem;
+        margin: auto;
+    }
+}
+
+
+@media (max-width:375px) {
+    .Main {
+        max-width: 22rem;
+        margin: auto;
+    }
+
+    .right {
+        width: 22rem;
+        margin: auto;
+    }
 }

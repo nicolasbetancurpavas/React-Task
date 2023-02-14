@@ -1,0 +1,76 @@
+.container-comments {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0.8rem;
+    background-color: var(--color-white);
+    padding: 1.4rem;
+    border-radius: 1rem;
+    height: 38rem;
+    color: var(--color-dark);
+    box-shadow: var(--box-shadow);
+}
+
+.comment {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.top-comments {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.img-comments {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+}
+
+.right-comments {
+    position: absolute;
+    text-align: end;
+    right: 0;
+    bottom: 0;
+}
+
+.right-comments ion-icon {
+    color: rgb(169, 133, 14);
+}
+
+.right-comments:nth-child(2) {
+    color: var(--color-disabled);
+}
+
+.name-comment span {
+    font-weight: bold;
+    color: var(--color-dark);
+}
+
+.name-comment {
+    font-weight: normal;
+    width: 14rem;
+    color: var(--color-disabled);
+    font-size: 1rem;
+}
+
+@media (max-width:1386px) {
+    .comment {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+@media (max-width:849px) {
+    .container-comments {
+        align-items: center;
+    }
+}

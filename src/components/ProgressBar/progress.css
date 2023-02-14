@@ -4,8 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
-    padding: 1.3rem;
+    margin-top: 1rem;
+    padding: 1rem;
     width: 100%;
     background-color: var(--color-white);
     box-shadow: var(--box-shadow);
@@ -18,8 +18,8 @@
 }
 
 .container-progress .percent {
-    top: 17.5%;
-    left: 31.6%;
+    top: 16.5%;
+    left: 31.5%;
     position: absolute;
     width: 150px;
     height: 150px;
@@ -81,4 +81,33 @@
 .container-progress h2 span {
     font-size: 1rem;
     color: var(--color-diasable);
+}
+
+@media (max-width:1386px) {
+    .container-progress .percent {
+        top: 16%;
+        left: 27%;
+    }
+}
+
+@media (max-width:849px) {
+    .container-progress .percent {
+        top: 16.5%;
+        left: 36.5%;
+    }
+}
+
+@media (max-width:530px) {
+    .container-progress .percent {
+        top: 16.5%;
+        left: 29.5%;
+    }
+}
+
+
+@media (max-width:375px) {
+    .container-progress .percent {
+        top: 16.5%;
+        left: 25.5%;
+    }
 }

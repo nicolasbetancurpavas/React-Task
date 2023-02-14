@@ -9,10 +9,11 @@ export const Profile = () => {
                 <ion-icon name="moon-sharp"></ion-icon>
                 <ion-icon name="sunny-sharp"></ion-icon>
             </div>
-            <ion-icon name="settings-sharp"></ion-icon>
-            <ion-icon name="notifications-sharp"></ion-icon>
-            |
-            <img className='profile-img' src={user} />
+            <div className='options-profile'>
+                <ion-icon name="settings-sharp"></ion-icon>
+                <ion-icon name="notifications-sharp"></ion-icon>
+            </div>
+            <img className='profile-img' alt='img-profile' src={user} />
             <div className='container-info-profile'>
                 <h4 className='dark'>Nicolas Beta..</h4>
                 <h5>betancur10@gmail.com</h5>

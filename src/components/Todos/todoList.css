@@ -1,17 +1,64 @@
+.title-task {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem auto;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.title-task h2 {
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-task ion-icon {
+    font-size: 2rem;
+    color: var(--color-secondary);
+}
+
 .container {
     position: relative;
-    margin-top: 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     background-color: var(--color-white);
     padding: 2rem;
-    height: 44rem;
+    max-height: 40rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
     border-radius: 1rem;
-    box-shadow: var(--box-shadow);
     transition: all 0.4s ease;
-    overflow-y: hidden;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
     overflow: scroll;
+}
+
+.form-addTodo {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+}
+
+.close ion-icon {
+    font-size: 3rem;
+    color: var(--color-disabled);
+    cursor: pointer;
+}
+
+.title-todo {
+    margin-top: 0.5rem;
+    color: var(--color-dark);
+    text-align: center;
+    font-size: 1.4rem;
 }
 
 .container::-webkit-scrollbar {
@@ -26,20 +73,130 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 1rem;
     list-style: none;
 }
 
 .item-task {
-    width: 18.5rem;
-    height: 12rem;
+    position: relative;
+    width: 24.5rem;
+    height: 12.5rem;
     border-radius: 1rem;
     padding: 1rem;
+    color: var(--color-dark);
     box-shadow: var(--box-shadow2);
-    transition: all 0.4s ease;
+    transition: box-shadow 0.4s ease;
+}
+
+.item-task .task {
+    margin-top: 0.6rem;
+    font-size: 13px;
+    height: 3rem;
+    text-align: center;
+    overflow: hidden;
 }
 
 .item-task:hover {
     box-shadow: none;
+}
+
+.Delete-completed {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.Delete-completed i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.Delete-completed i:nth-child(2) {
+    position: absolute;
+    right: 0px;
+    color: var(--color-disabled);
+    transition: all 0.3s ease;
+}
+
+.Delete-completed i:nth-child(2):hover {
+    color: var(--color-danger);
+}
+
+
+.icons-task {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    color: var(--color-disabled);
+    gap: 0.3rem;
+}
+
+.icons-task ion-icon:nth-child(1):hover {
+    color: var(--color-warning);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+
+.container-img-task img {
+    height: 32px;
+    height: 32px;
+    background-color: var(--color-disabled);
+    border-radius: 50%;
+    padding: 0.2rem;
+}
+
+.container-img-task p {
+    color: var(--color-disabled);
+}
+
+/* ---------------styles completd todo-----------------*/
+
+.container-confirm {
+    background-color: var(--color-violet2);
+    opacity: 0.8;
+}
+
+.p-completed {
+    color: var(--color-dark);
+    text-decoration: line-through 0.1px;
+}
+
+.Delete-completed .confirm-completed {
+    color: var(--color-dark);
+}
+
+@media (max-width:1570px) {
+    .item-task {
+        width: 20.5rem;
+        height: 12.5rem;
+    }
+}
+
+@media (max-width:1386px) {
+    .item-task {
+        width: 17.5rem;
+        height: 16.5rem;
+    }
+
+    .container-img-task {
+        margin-top: 2rem;
+    }
+
+    .container {
+        padding: 0;
+        padding-top: 1.5rem;
+    }
+}
+
+@media (max-width:500px) {
+    .title-task h2 {
+        font-size: 1.4rem;
+    }
 }

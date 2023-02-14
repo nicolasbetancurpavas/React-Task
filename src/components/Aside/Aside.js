@@ -6,13 +6,17 @@ import { TodoContext } from '../TodoContext'
 
 
 export function Aside() {
-    const { totalTodos } = useContext(TodoContext)
+    const { totalTodos, openMenu, onClikOpen } = useContext(TodoContext)
     return (
-        <aside className='container-aside'>
+        <aside translate='no'
+            className={`container-aside ${openMenu ? 'open-Menu' : null}`}
+            onClick={onClikOpen}
+        >
+            <span className='close-btn'>
+                <ion-icon name="close-outline"></ion-icon>
+            </span>
             <Logo />
-            <AsideBody
-                totalTodos={totalTodos}
-            />
+            <AsideBody totalTodos={totalTodos} />
         </aside>
     )
 }

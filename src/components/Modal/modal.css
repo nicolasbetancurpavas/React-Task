@@ -11,51 +11,73 @@
     align-items: center;
 }
 
+
 .form-addTodo {
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--dark);
+    background-color: var(--color-white);
     padding: 60px;
     border: 10px solid var(--secondary);
     border-radius: 10px;
 }
 
+.form-addTodo label {
+    font-size: 2rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
 .input-new-todo {
+    margin-top: 1rem;
     display: flex;
     text-align: center;
-    border: 5px solid var(--light);
-    background-color: var(--dark);
+    border: 4px solid var(--color-primary);
     color: var(--light);
     height: 100px;
-    border-radius: 10px;
+    border-radius: 0.5rem;
 }
 
 .input-new-todo::placeholder {
-    color: var(--light);
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-btn-new-todo {
-    margin-top: 15px;
+    margin-top: 2rem;
     display: flex;
+}
+
+.input-title {
+    margin-top: 1rem;
+    border: 4px solid var(--color-primary);
+    padding: 0.4rem;
+    text-align: center;
+    border-radius: 0.4rem;
 }
 
 .btn-add-todo {
     width: 150px;
     font-size: 16px;
-    background-color: var(--dark);
-    padding: 15px;
-    border-radius: 5px;
-    color: var(--light);
+    background-color: var(--color-danger);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--color-white);
     border: 2px solid var(--light);
     margin-right: 10px;
 }
 
 .btn-add-todo:hover {
+    width: 155px;
+    transition: all 0.3s ease;
     cursor: pointer;
-    border: 2px solid red;
-    color: red;
-    transition: all 0.4s ease;
 }
 
 .btn-add-todo-save {
@@ -63,14 +85,14 @@
     font-size: 16px;
     padding: 15px;
     border-radius: 5px;
-    background-color: var(--primary);
-    color: var(--light);
+    background-color: var(--color-primary);
+    color: var(--color-white);
     border: 2px solid var(--light);
 }
 
 .btn-add-todo-save:hover {
+    width: 155px;
     cursor: pointer;
-    background-color: var(--secondary);
     transition: all 0.4s ease;
 }
 

@@ -4,7 +4,7 @@ export const TodoCounterItem = ({ title, value }) => {
     return (
         <div className='count'>
             <h3>{title}</h3>
-            <h1>{value}</h1>
+            <h2>{value}</h2>
         </div>
     )
 }

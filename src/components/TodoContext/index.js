@@ -10,55 +10,49 @@ function TodoProvider(props) {
         error
     ] = useLocalStorage('TodosV1', [])
 
-    const [searchValue, setSearchValue] = useState(""); // estado para nuestro buscador 
+    const [searchValue, setSearchValue] = useState("");
     const [openModal, setOpenModal] = useState(false)
+    const [openMenu, setOpenMenu] = useState(false)
+    const onClikOpen = () => setOpenMenu(state => !state)
 
-    const completedTodos = todos.filter(todo => todo.completed).length  // [] == true
+    const completedTodos = todos.filter(todo => todo.completed).length
 
     const totalTodos = todos.length
-
-    let searchedTodos = [] // array vacio 
+    let searchedTodos = []
 
     if (!searchValue.length >= 1) {
-        searchedTodos = todos // por defecto
+        searchedTodos = todos
     } else {
         searchedTodos = todos.filter(todo => {
-            const todoText = todo.text.toLowerCase() // recibe cualquier string y lo convierte en minusculas
+            const todoText = todo.title.toLowerCase()
             const searchText = searchValue.toLowerCase()
-            return todoText.includes(searchText) // (cualquier letra similar ) que coincida con los todos los muestra 
+            return todoText.includes(searchText)
         })
     }
-    //evento completar todo o "descompletar" todo
 
     const completeTodo = (text) => {
-        //busco el indice
         const todoIndex = todos.findIndex(todo => todo.text === text)
         const newTodos = [...todos]
         newTodos[todoIndex].completed ? newTodos[todoIndex].completed = false : newTodos[todoIndex].completed = true
         saveTodos(newTodos)
     }
 
-    //evento borrar todo
     const deleteTodo = (text) => {
-        const todoIndex = todos.findIndex(todo => todo.text === text) // el indece del valor al que estamos comparando 
+        const todoIndex = todos.findIndex(todo => todo.text === text)
         const newTodos = [...todos]
-        newTodos.splice(todoIndex, 1) // corta el array desde el indice y 1 elemento
+        newTodos.splice(todoIndex, 1)
         saveTodos(newTodos)
     }
 
-    const AddTodo = (text) => {
+    const AddTodo = (text, title) => {
         const newTodos = [...todos]
         console.log(text.length)
-        if (text.length > 0) {
-            newTodos.push({
-                completed: false,
-                text: text
-            })
-            saveTodos(newTodos)
-        }
-        else {
-            saveTodos(todos)
-        }
+        newTodos.push({
+            completed: false,
+            title: title,
+            text: text,
+        })
+        saveTodos(newTodos)
     }
 
     return (
@@ -75,6 +69,9 @@ function TodoProvider(props) {
             openModal,
             setOpenModal,
             AddTodo,
+            openMenu,
+            setOpenMenu,
+            onClikOpen,
         }}>
             {props.children}
         </TodoContext.Provider>

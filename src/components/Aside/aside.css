@@ -6,14 +6,28 @@ ion-icon {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
     background: var(--color-white);
-    height: 100vh;
-    padding: 1.7rem;
+    height: 100%;
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    overflow: scroll;
 }
 
-.container-sidebar {
-    width: 100%;
+.container-aside::-webkit-scrollbar {
+    display: none;
+}
+
+.container-aside:hover {
+    box-shadow: none;
+}
+
+.close-btn ion-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    font-size: 2.5rem;
+    color: var(--color-disabled);
+    display: none;
 }
 
 .container-sidebar .task {
@@ -51,9 +65,9 @@ ion-icon {
     width: 100%;
     margin-bottom: 1rem;
     gap: 1rem;
-    color: var(--color-diasable);
+    color: var(--color-disabled);
     padding: 0.3rem;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     border-radius: 0.3rem;
 }
 
@@ -76,7 +90,7 @@ ion-icon {
 
 .sidebar_bottom {
     margin-top: 2rem;
-    color: var(--color-diasable);
+    color: var(--color-disabled);
 }
 
 .sidebar_bottom h4 {
@@ -92,7 +106,7 @@ ion-icon {
     position: relative;
     gap: 1rem;
     margin-bottom: 1rem;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     padding: 0.3rem;
     border-radius: 0.3rem;
     color: var(--color-diasable);
@@ -135,8 +149,161 @@ ion-icon {
     background-color: var(--color-danger);
 }
 
+@media (max-width:1200px) {
+
+    .container-aside {
+        display: flex;
+        padding: 0;
+    }
+
+    .ancla-aside ion-icon {
+        font-size: 1.8rem;
+    }
+
+    .sidebar_body .aside_item:hover {
+        margin-left: 0px;
+    }
+
+    .sidebar_body ion-icon {
+        font-size: 1.8rem;
+    }
+
+    .container-sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aside_top_img {
+        margin: auto;
+    }
+
+    .container-sidebar .task {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .container-sidebar .task::before {
+        display: none;
+    }
+
+    .sidebar_bottom ion-icon {
+        display: none;
+    }
+
+    .ancla-aside h3 {
+        display: none;
+    }
+
+    .aside_item span {
+        display: none;
+    }
+
+    .aside_item h3 {
+        display: none;
+    }
+
+    .aside_top_title {
+        display: none;
+    }
+
+
+}
+
 @media (max-height:828px) {
     .container-aside {
         height: 100%;
+        justify-content: flex-start;
+
     }
+}
+
+
+@media (max-width:829px) {
+
+
+    .close-btn ion-icon {
+        display: flex;
+    }
+
+    .container-aside {
+        order: 1;
+        position: fixed;
+        display: none;
+        left: -100%;
+        flex-direction: column;
+        background: var(--color-white);
+        width: 50%;
+        min-width: 330px;
+        padding: 1rem;
+        height: 100vh;
+        margin: 0px;
+        z-index: 100;
+        box-shadow: 0 0 0 50vmax rgba(29, 29, 29, 0.11);
+        animation: showMenu 0.6s ease forwards;
+    }
+
+    .open-Menu {
+        display: flex;
+    }
+
+    @keyframes showMenu {
+        to {
+            left: 0;
+        }
+    }
+
+
+    .container-aside:hover {
+        box-shadow: 0 0 0 50vmax rgba(29, 29, 29, 0.11);
+    }
+
+    .aside_top_img {
+        margin: 0;
+    }
+
+    .sidebar_top {
+        width: 100%;
+    }
+
+    .sidebar_body {
+        width: 100%;
+    }
+
+    .sidebar_bottom {
+        width: 100%;
+    }
+
+    .ancla-aside h3 {
+        display: block;
+    }
+
+    .aside_item span {
+        display: block;
+    }
+
+    .aside_item h3 {
+        display: block;
+    }
+
+    .aside_top_title {
+        display: block;
+    }
+
+    .container-sidebar .task {
+        background-color: var(--color-white);
+        color: var(--color-primary);
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .sidebar_bottom a ion-icon {
+        display: flex;
+    }
+
 }

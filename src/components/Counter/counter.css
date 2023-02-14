@@ -1,15 +1,13 @@
 .container-count-todo {
-    margin-top: 1.2rem;
-    max-width: 46rem;
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    padding: 1.4rem;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1.5rem;
-    background-color: var(--color-white);
-    border-radius: 1rem;
+    gap: 0.6rem;
     box-shadow: var(--box-shadow);
-    transition: all 0.3s ease;
 }
 
 .container-count-todo:hover {
@@ -17,13 +15,12 @@
 }
 
 .count {
-    margin-top: 1rem;
     width: 10rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 5.5rem;
+    height: 5rem;
 }
 
 .container-count-todo .count h1 {
@@ -47,26 +44,28 @@
     height: 60%;
 }
 
-.container-count-todo .count:nth-child(1) {
+.container-count-todo .count:nth-child(2n) {
     padding: 0.3rem;
     background-color: var(--color-violet2);
     border-radius: 0.5rem;
+    color: var(--color-dark);
 }
 
-.container-count-todo .count:nth-child(2) {
+.container-count-todo .count {
     padding: 0.3rem;
-    background-color: var(--color-primary2);
+    background-color: var(--color-primary);
     border-radius: 0.5rem;
+    color: var(--color-white);
 }
 
-.container-count-todo .count:nth-child(3) {
-    padding: 0.3rem;
-    background-color: var(--color-warning2);
-    border-radius: 0.5rem;
-}
-
-.container-count-todo .count:nth-child(4) {
-    padding: 0.3rem;
-    background-color: var(--color-danger2);
-    border-radius: 0.5rem;
+@media (max-width:530px) {
+    .container-count-todo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        box-shadow: var(--box-shadow);
+    }
 }
