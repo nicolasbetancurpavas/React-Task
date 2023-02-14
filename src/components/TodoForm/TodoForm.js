@@ -21,6 +21,7 @@ export const TodoForm = () => {
     const onCancel = () => {
         setOpenModal(false)
     }
+
     const onSubmit = (event) => {
         event.preventDefault()
         AddTodo(todoDescription, todoTitle)

@@ -29,6 +29,7 @@ function AppUI() {
         openModal,
         setOpenModal,
         searchValue,
+        onClikButton,
     }
         = useContext(TodoContext)
 
@@ -45,9 +46,7 @@ function AppUI() {
                 <div className="title-task">
                     <h2>your tasks <ion-icon name="checkbox-sharp"></ion-icon></h2>
                     <BotonAdd
-                        clase={'btn-new-todo '}
-                        openModal={openModal}
-                        setOpenModal={setOpenModal}
+                        clase={'btn-new-todo'}
                     />
                 </div>
                 <TodoList>
@@ -62,7 +61,9 @@ function AppUI() {
                         <div className="container-card-new-todo">
                             <h3 className="title-create">
                                 Add your first task</h3>
-                            <span className="icon-newtodo"><ion-icon name="add-circle-outline"></ion-icon></span>
+                            <span className="icon-newtodo"
+                                onClick={onClikButton}
+                            ><ion-icon name="add-circle-outline"></ion-icon></span>
                         </div>
                     }
                     {searchedTodos.map(todo => (

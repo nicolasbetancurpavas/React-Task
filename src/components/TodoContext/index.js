@@ -13,6 +13,7 @@ function TodoProvider(props) {
     const [searchValue, setSearchValue] = useState("");
     const [openModal, setOpenModal] = useState(false)
     const [openMenu, setOpenMenu] = useState(false)
+    const onClikButton = () => setOpenModal(state => !state)
     const onClikOpen = () => setOpenMenu(state => !state)
 
     const completedTodos = todos.filter(todo => todo.completed).length
@@ -68,6 +69,7 @@ function TodoProvider(props) {
             deleteTodo,
             openModal,
             setOpenModal,
+            onClikButton,
             AddTodo,
             openMenu,
             setOpenMenu,

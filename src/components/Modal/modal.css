@@ -97,40 +97,30 @@
 }
 
 @media (max-width:480px) {
-
-    .container-btn-new-todo {
-        margin-top: 20px;
-        display: flex;
-    }
-
     .form-addTodo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--dark);
-        padding: 20px;
-        border: 10px solid var(--secondary);
-        border-radius: 10px;
+        max-width: 320px;
     }
 
-    .btn-add-todo {
-        width: 100px;
-        font-size: 14px;
-        background-color: var(--dark);
-        padding: 15px;
-        border-radius: 5px;
-        color: var(--light);
-        border: 2px solid var(--light);
-        margin-right: 10px;
+    .form-addTodo label {
+        font-size: 1.5rem;
     }
 
     .btn-add-todo-save {
-        width: 100px;
-        font-size: 14px;
-        padding: 15px;
-        border-radius: 5px;
-        background-color: var(--primary);
-        color: var(--light);
-        border: 2px solid var(--light);
+        width: 120px;
+        padding: 0.3rem;
+    }
+
+    .btn-add-todo {
+        width: 120px;
+        padding: 1rem;
+    }
+
+    .input-title {
+        width: 15.5rem;
+        margin-top: 1rem;
+        border: 4px solid var(--color-primary);
+        padding: 0.4rem;
+        text-align: center;
+        border-radius: 0.4rem;
     }
 }
