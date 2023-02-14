@@ -147,6 +147,7 @@ small {
   border: 3px solid var(--color-disabled);
   border-radius: 1rem;
   gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .container-card-new-todo h2 {
