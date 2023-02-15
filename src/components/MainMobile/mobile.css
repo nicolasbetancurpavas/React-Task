@@ -8,19 +8,33 @@
         overflow-x: hidden;
     }
 
+    .img-log-mobile {
+        width: 50px;
+        height: 50px;
+    }
+
+    .main-mobile-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .main-mobile-right .title-mobile span {
+        color: var(--color-dark);
+    }
+
     .main-mobile {
+        width: 100%;
         background-color: white;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         position: fixed;
         z-index: 20;
         left: 0;
-        padding: 0.5rem;
+        padding: 0.8rem;
         color: var(--color-primary);
         border-radius: 0.4rem;
-        border-top-left-radius: 0;
-        border: 2px solid var(--color-primary);
     }
 
     .main-mobile:hover {
@@ -28,7 +42,11 @@
     }
 
     .main-mobile ion-icon {
-        font-size: 2.2rem;
+        border-top-left-radius: 0;
+        background: var(--color-primary);
+        color: var(--color-white);
+        font-size: 2.6rem;
+        padding: 0.4rem;
         font-weight: bold;
     }
 }
